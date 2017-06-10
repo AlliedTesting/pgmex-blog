@@ -51,7 +51,7 @@ subtitle-img: https://alliedtesting.github.io/pgmex-blog/img/logo.png
 author:
   name: Allied Testing Ltd.
   email: "info@pgmex.alliedtesting.com"
-  github: AlliedTesting    # eg. daattali
+  github: AlliedTesting/pgmex-blog    # eg. daattali
   url: https://www.alliedtesting.com
 
 # Select which links to show in the footer

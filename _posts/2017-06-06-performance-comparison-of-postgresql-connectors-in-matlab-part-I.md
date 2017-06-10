@@ -38,7 +38,7 @@ a connection to **PostgreSQL** via LibPQ library.
 
 This part of the paper covers only data insertion performance, data retrieval will be discussed in Part II of the paper.
 
-## Methods to insert data via **Matlab Database Toolbox**
+## Methods of data insertion in **Matlab Database Toolbox**
 
 **Matlab Database Toolbox** provides two methods of **database.jdbc.connection** class for inserting data, namely, **datainsert** and **fastinsert**.
  turns out that the first one is much faster than the second one (see below graphs displaying results of experiments), so in our performance
@@ -81,7 +81,7 @@ such that each cell contains some scalar object or a string determining the valu
 the created prepared statement with data makes **datainsert** impressively quick, but this simultaneously leads to certain latent shortcomings
 that are not obvious in the beginning.
 
-## Ways of data insertion for **PgMex**
+## Methods of data insertion in **PgMex**
 
 Now let us consider a way to solve the same task via [**PgMex**](http://pgmex.alliedtesting.com). This library has also two ways for inserting data. We
 discuss them both just to give a complete picture, although basically we consider certainly the quickest method.  The first, slower, way to insert data is
@@ -248,7 +248,7 @@ the second is **datainsert**, the slowest is (as was already mentioned) **fastin
 ![Inserting of scalar numericals]({{ site.url }}/img/compareInsertForNumScalars_traj_wofi.jpeg)
 ![Inserting of scalar numericals]({{ site.url }}/img/compareInsertForNumScalars_bar_wofi.jpeg)
 
-## Inserting of timestamps
+## Inserting timestamps
 
 The gap in performance between [**batchParamExec**](http://pgmex.alliedtesting.com/#batchparamexec) and **datainsert** becomes even greater when we
 try to pass input data into **datainsert** as a two-dimensional cell array, this time inserting the fields **t\_data** and **calc\_date** with dates along
@@ -282,7 +282,7 @@ Caused by:
 Besides, on average the execution time for [**batchParamExec**](http://pgmex.alliedtesting.com/#batchparamexec) is less than 60% of that time
 for **datainsert**, at least for those volumes both function succeeded to insert.
 
-## Inserting of arrays
+## Inserting arrays
 
 The most difficult situation occurs when it is necessary to pass values for fields of array types. This may occur when we need to insert time series
 (or even multidimensional arrays like those we have for implied volatility surfaces) or values of vector-valued factors/features.
