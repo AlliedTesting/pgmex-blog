@@ -1,0 +1,10 @@
+{% if page.layout == "post" or post.layout == "post" %}
+    {% if post.url %} 
+        {% assign path = post.path %} 
+    {% else %} 
+        {% assign path = page.path %} 
+    {% endif %} 
+    
+    <li><a href="{{ site.github.repo }}/edit/master/{{ path }}"><span class="fa fa-pencil"></span> edit</a></li>
+{% endif %} 
+    

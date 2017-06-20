@@ -187,12 +187,12 @@ becomes an advantage when it comes to a volume of data that may be potentially i
 <!---
 ![Inserting of scalar numericals](compareInsertForNumScalars_traj_full.jpeg =700x373)
 -->
-![Inserting of scalar numericals]({{ site.url }}/img/compareInsertForNumScalars_traj_full.jpeg)
+![Inserting of scalar numericals]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForNumScalars_traj_full.jpeg)
 
 <!---
 ![Inserting of scalar numericals](compareInsertForNumScalars_traj_cropped.jpeg =700x373)
 -->
-![Inserting of scalar numericals]({{ site.url }}/img/compareInsertForNumScalars_traj_cropped.jpeg)
+![Inserting of scalar numericals]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForNumScalars_traj_cropped.jpeg)
 
 When a number of tuples reaches 700000 (652Mb), **datainsert** throws the following exception:
 
@@ -235,7 +235,7 @@ on average both **datainsert** and [**batchParamExec**](http://pgmex.alliedtesti
 <!---
 ![Inserting of scalar numericals](compareInsertForNumScalars_bar_full.jpeg =700x373)
 -->
-![Inserting of scalar numericals]({{ site.url }}/img/compareInsertForNumScalars_bar_full.jpeg)
+![Inserting of scalar numericals]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForNumScalars_bar_full.jpeg)
 
 At the same time the execution time for [**batchParamExec**](http://pgmex.alliedtesting.com/#batchparamexec) is approximately 70% of that time for
 **datainsert** on avarage. Thus [**batchParamExec**](http://pgmex.alliedtesting.com/#batchparamexec) is the fastest method,
@@ -245,8 +245,8 @@ the second is **datainsert**, the slowest is (as was already mentioned) **fastin
 ![Inserting of scalar numericals](compareInsertForNumScalars_traj_wofi.jpeg =700x373)
 ![Inserting of scalar numericals](compareInsertForNumScalars_bar_wofi.jpeg =700x373)
 -->
-![Inserting of scalar numericals]({{ site.url }}/img/compareInsertForNumScalars_traj_wofi.jpeg)
-![Inserting of scalar numericals]({{ site.url }}/img/compareInsertForNumScalars_bar_wofi.jpeg)
+![Inserting of scalar numericals]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForNumScalars_traj_wofi.jpeg)
+![Inserting of scalar numericals]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForNumScalars_bar_wofi.jpeg)
 
 ## Inserting timestamps
 
@@ -261,8 +261,8 @@ serial date numbers. The results for data with timestamps passed as strings into
 ![Inserting of scalar data with timestamps](compareInsertForScalarsInCell_traj.jpeg =700x373)
 ![Inserting of scalar data with timestamps](compareInsertForScalarsInCell_bar.jpeg =700x373)
 -->
-![Inserting of scalar data with timestamps]({{ site.url }}/img/compareInsertForScalarsInCell_traj.jpeg)
-![Inserting of scalar data with timestamps]({{ site.url }}/img/compareInsertForScalarsInCell_bar.jpeg)
+![Inserting of scalar data with timestamps]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForScalarsInCell_traj.jpeg)
+![Inserting of scalar data with timestamps]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForScalarsInCell_bar.jpeg)
 
 It can be easily seen that **datainsert** reaches 300000 tuples (335Mb) (thanks to absence of converting numbers to some types of greater size),
 but fails to insert 500000 tuples (559Mb) by throwing this exception:
@@ -316,9 +316,9 @@ data with arrays are as follows:
 ![Inserting of arrays](compareInsertForArrays_traj_cropped.jpeg =700x373)
 ![Inserting of arrays](compareInsertForArrays_bar_full.jpeg =700x373)
 -->
-![Inserting of arrays]({{ site.url }}/img/compareInsertForArrays_traj_full.jpeg)
-![Inserting of arrays]({{ site.url }}/img/compareInsertForArrays_traj_cropped.jpeg)
-![Inserting of arrays]({{ site.url }}/img/compareInsertForArrays_bar_full.jpeg)
+![Inserting of arrays]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForArrays_traj_full.jpeg)
+![Inserting of arrays]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForArrays_traj_cropped.jpeg)
+![Inserting of arrays]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForArrays_bar_full.jpeg)
 
 Naturally we included the overhead time for transformation of arrays required for **datainsert** into its total time displayed on the pictures.
 And it is on average more than 30 times (!) slower than that of [**batchParamExec**](http://pgmex.alliedtesting.com/#batchparamexec).
@@ -351,8 +351,8 @@ But okey, let us see what if we take into account only "pure" time, i.e. if we m
 ![Inserting of arrays](compareInsertForArrays_traj_self.jpeg =700x373)
 ![Inserting of arrays](compareInsertForArrays_bar_self.jpeg =700x373)
 -->
-![Inserting of arrays]({{ site.url }}/img/compareInsertForArrays_traj_self.jpeg)
-![Inserting of arrays]({{ site.url }}/img/compareInsertForArrays_bar_self.jpeg)
+![Inserting of arrays]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForArrays_traj_self.jpeg)
+![Inserting of arrays]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareInsertForArrays_bar_self.jpeg)
 
 And in this case we see that **datainsert** works 2 times slower than [**batchParamExec**](http://pgmex.alliedtesting.com/#batchparamexec).
 

@@ -6,7 +6,7 @@ permalink: /about/
 
 <div style="text-align:center">
   <a href="{{ site.author.url }}">
-    <img src="{{ site.url }}/img/allied_logo.jpg" class="profile-picture" width="256">
+    <img src="{{ site.baseurl }}/img/allied_logo.jpg" class="profile-picture" width="256">
   </a>
 </div>
 

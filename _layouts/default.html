@@ -1,9 +1,10 @@
----
-layout: base
----
-
-<div class="intro-header"></div>
-
-<div role="main" class="container">
-  {{ content }}
-</div>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  {% include head.html %}
+  <body>
+    {% include nav.html %}
+    {{ content }}
+    {% include footer.html %}
+    {% include footer-scripts.html %}
+  </body>
+</html>

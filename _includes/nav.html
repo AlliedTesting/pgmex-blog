@@ -1,7 +1,16 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
   <div class="container-fluid">
+    <!-- <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" area-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ site.url }}">{{ site.title }}</a>
+    </div> -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" area-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -9,11 +18,11 @@
       </button>
       {% if site.title-img and site.subtitle-img %}
         <a class="navbar-brand navbar-brand-logo" href="{{ site.url }}">
-          <img style=" float:left; display:inline" src="{{ site.title-img }}" hspace=5px/>
-          <img style=" float:left; display:inline" src="{{ site.subtitle-img }}" hspace=5px/>
+          <img style=" float:left; display:inline" src="{{ site.baseurl }}/img/{{ site.title-img }}" hspace=5px/>
+          <img style=" float:left; display:inline" src="{{ site.baseurl }}/img/{{ site.subtitle-img }}" hspace=5px/>
         </a>
       {% elsif site.title-img %}
-        <a class="navbar-brand navbar-brand-logo" href="{{ site.url }}"><img src="{{ site.title-img }}"/></a>
+        <a class="navbar-brand navbar-brand-logo" href="{{ site.url }}"><img src="{{ site.baseurl }}/img/{{ site.title-img }}"/></a>
       {% else %}
         <a class="navbar-brand" href="{{ site.url }}">{{ site.title }}</a>
       {% endif %}
@@ -21,46 +30,38 @@
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-      {% for link in site.navbar-links %}
-        {% if link[1].first %}
-          <li class="navlinks-container">
-            <a class="navlinks-parent" href="javascript:void(0)">{{ link[0] }}</a>
-            <div class="navlinks-children">
-              {% for childlink in link[1] %}
-                {% for linkparts in childlink %}
-                  {% include navbarlink.html link=linkparts %}
-                {% endfor %}
-              {% endfor %}
-            </div>
-          </li>
-        {% else %}
-          <li>
-            {% include navbarlink.html link=link %}
-          </li>
-        {% endif %}
+        <li class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}">
+          <a href="{{ site.pgmexurl }}">PgMex Home{% if page.url == site.url %} <span class="sr-only">(current)</span>{% endif %}</a>
+        </li>
+
+        <li class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}">
+          <a href="{{ site.perftesturl }}">Performance Tests{% if page.url == site.url %} <span class="sr-only">(current)</span>{% endif %}</a>
+        </li>
+
+        {% comment %}
+          The code below dynamically generates a sidebar nav of pages with
+          `layout: page` in the front-matter. See readme for usage.
+        {% endcomment %}
+        
+        {% assign pages_list = site.pages %}
+        {% for node in pages_list %}
+          {% if node.title != null %}
+            {% if node.layout == "page" and node.nav-include != false %}
+              <li class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}">
+                <a href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}{% if page.url == node.url %} <span class="sr-only">(current)</span>{% endif %}</a>
+              </li>
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </ul>
     </div>
 
-	{% if page.image and (layout.show-avatar or page.show-avatar) %}
+	{% if site.avatar and (layout.show-avatar or page.show-avatar) %}
 	<div class="avatar-container">
 	  <div class="avatar-img-border">
-	    <a href="{{ site.url }} ">
-	      <img class="avatar-img" src="{{ page.image | prepend: site.baseurl | replace: '//', '/' }}" />
-		</a>
-	  </div>
-	</div>
-	{% elsif site.avatar and (layout.show-avatar or page.show-avatar) %}
-	<div class="avatar-container">
-	  <div class="avatar-img-border">
-	    <a href="{{ site.url }} ">
-	      <img class="avatar-img" src="{{ site.avatar | prepend: site.baseurl | replace: '//', '/' }}" />
-		</a>
-	  </div>
-	</div>
-	{% elsif site.avatar-text and (layout.show-avatar or page.show-avatar) %}
-	<div class="avatar-text-container">
-	  <a class="navbar-brand" href="{{ site.url }}">{{ site.avatar-text }}</a>
+	    <a href="{{ site.url }}">
+	      <img class="avatar-img" src="{{ site.baseurl }}/img/{{ site.avatar }}" />
+            </a>
 	  </div>
 	</div>
 	{% endif %}

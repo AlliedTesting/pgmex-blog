@@ -1,48 +1,38 @@
-# --- General options --- #
-
-# url is the full website URL
-# baseurl is the website's URL without the hostname
-
-# If you are building a simple GitHub user page (http://username.github.io) then use these settings:
 url: "https://alliedtesting.github.io/pgmex-blog"
-baseurl: ""
-
-# If you are building a GitHub project page then use these settings:
-#url: "http://username.github.io/projectname"
-#baseurl: "/projectname"
-
-# Of course don't forget to change the username and projectname to YOUR username and project
-
-# Name of website
+baseurl: "/pgmex-blog"
 title: PgMex Blog
+description: About PostgreSQL client library for Matlab
+# feedburner: http://feeds.feedburner.com/AlliedTesting
+title-img: allied_logo.jpg
+subtitle-img: logo.png
+pgmexurl: "http://pgmex.alliedtesting.com"
+perftesturl: "https://github.com/AlliedTesting/pgmex-jdbc-perf-test"
 
-# Short description of your site
-description: >
-  PgMex is a high-performance PostgreSQL client library for Matlab
-  that enables a Matlab-based application to communicate with PostgreSQL database
-  in the Matlab native way by passing data in a form of matrices, multi-dimensional
-  arrays and structures. The library is written in pure C which gives a significant
-  performance boost for both small and data-heavy database requests. Both Windows
-  and Linux platforms are supported.
 
-# --- Navigation bar options --- #
+excerpt_separator: <!--end_of_excerpt-->
+excerpt_length: 200
 
-# List of links in the navigation bar
-navbar-links:
-  About Us: "about"
-  Resources:
-    - Performance Tests: "https://github.com/AlliedTesting/pgmex-jdbc-perf-test"
-  PgMex home: "http://pgmex.alliedtesting.com"
+# google_analytics: ""
 
-# Image to show in the navigation bar - image must be a square (width = height)
-# Remove this parameter if you don't want an image in the navbar
-# avatar: "/img/logo_small.png"
-avatar-text: PgMex Blog
+# gravatar:
+#    hash: 
+#    size: 80
 
-# If you want to have an image logo in the top-left corner instead of the title text,
-# then specify the following parameter
-title-img: https://alliedtesting.github.io/pgmex-blog/img/allied_logo.jpg
-subtitle-img: https://alliedtesting.github.io/pgmex-blog/img/logo.png
+avatar: logo_small_sqr.png
+
+disqus:
+  shortname: "pgmexblog"
+  show_comment_count: true
+   
+github:
+  repo: https://github.com/AlliedTesting/pgmex-blog
+
+gems:
+  - jekyll-feed
+  - jekyll-mentions
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
 
 # --- Footer options --- #
 
@@ -53,71 +43,28 @@ author:
   email: "info@pgmex.alliedtesting.com"
   github: AlliedTesting/pgmex-blog    # eg. daattali
   url: https://www.alliedtesting.com
-
+  
 # Select which links to show in the footer
 footer-links-active:
+  mvp: false
   rss: true
   facebook: false
   email: true
   twitter: false
-  google-plus: false
   github: true
-  reddit: false
   linkedin: false
-  xing: false
   stackoverflow: false
-  snapchat: false
-  instagram: false
-  youtube: false
-  spotify: false
-  telephone: false
-
-# Select which share links to show in posts
-share-links-active:
-  twitter: false
-  facebook: false
-  google: false
-  linkedin: false
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "alliedtesting.github.io/pgmex-blog/"  # eg. "deanattali.com/beautiful-jekyll"
-
-# --- Misc --- #
-# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-disqus: "pgmexblog"
-
-# Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
-
-# Google Tag Manager ID
-#gtm: ""
-
-# Facebook App ID
-# fb_app_id: ""
-
-# Excerpt Word Length
-# Truncates the excerpt to the specified number of words on the index page
-excerpt_length: 200
-
-excerpt_separator: <!--end_of_excerpt-->
-
-
-# Character used to separate site title and description in HTML document title
-# and RSS feed title
-title-separator: "-"
-
-
-
-# --- Don't need to touch anything below here (but you can if you want) --- #
+url-pretty: "alliedtesting.github.io/pgmex-blog"  # eg. "deanattali.com/beautiful-jekyll"
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Vancouver"
+timezone: Europe/Moscow
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+permalink: /:year/:month/:day/:title/
 paginate: 5
-
 kramdown:
   input: GFM
 
@@ -128,87 +75,24 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "post"
       comments: true  # add comments to all blog posts
-      social-share: true # add social media sharing buttons to all blog posts
   -
     scope:
       path: "" # all files
     values:
-      layout: "page"
+      layout: "default"
       show-avatar: true
-
-# Use tags pages (not recommended if you are deploying via GitHub pages, only set to true if deploying locally with ruby)
-link-tags: false
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      nav-include: true  # include in header nav
 
 # Exclude these files from production site
 exclude:
-  - CHANGELOG.md
-  - CNAME
-  - Dockerfile
   - Gemfile
   - Gemfile.lock
   - LICENSE
   - README.md
-  - Vagrantfile
-
-# prose.io config
-prose:
-  rooturl: '_posts'
-  media: 'img'
-  ignore:
-    - 404.html
-    - LICENSE
-    - feed.xml
-    - _config.yml
-    - /_layouts
-    - /_includes
-    - /css
-    - /img
-    - /js
-  metadata:
-    _posts:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "post"
-      - name: "title"
-        field:
-          element: "text"
-          label: "Post title"
-          placeholder: "Title"
-          alterable: true
-      - name: "subtitle"
-        field:
-          element: "textarea"
-          label: "Subtitle"
-          placeholder: "A description of your post."
-          alterable: true
-      - name: "date"
-        field:
-          element: "text"
-          label: "Date"
-          help: "Enter date of post."
-          placeholder: "yyyy-mm-dd"
-          alterable: true
-      - name: "image"
-        field:
-          element: "text"
-          label: "Image"
-          help: "Add a thumbnail image to your post."
-          placeholder: "Thumbnail"
-          alterable: true
-      - name: "published"
-        field:
-          element: "checkbox"
-          label: "Publish"
-          help: "Check to publish post, uncheck to hide."
-
-gems:
-  - jekyll-paginate
-
-exclude:
-  - my_project
-
-# Beautiful Jekyll / Dean Attali
-# 2fc73a3a967e97599c9763d05e564189
+  - CNAME
