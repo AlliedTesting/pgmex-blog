@@ -1,15 +1,19 @@
 url: "https://alliedtesting.github.io/pgmex-blog"
 baseurl: "/pgmex-blog"
 title: PgMex Blog
-description: About PostgreSQL client library for Matlab
+subtitle: Allied Testing
+description: PostgreSQL-Matlab connectivity
 # feedburner: http://feeds.feedburner.com/AlliedTesting
-title-img: allied_logo.jpg
-title-url: "https://www.alliedtesting.com"
-subtitle-img: logo.png
-subtitle-url: "http://pgmex.alliedtesting.com"
-pgmexurl: "http://pgmex.alliedtesting.com"
-perftesturl: "https://github.com/AlliedTesting/pgmex-jdbc-perf-test"
+title-img: logo.png
+title-url: "http://pgmex.alliedtesting.com"
+subtitle-img: allied_logo.gif
+subtitle-url: "https://www.alliedtesting.com"
 
+# List of links in the navigation bar (excluding "Home" as well as those that are given as separate md files in the root folder)
+navbar-links:
+  Resources:
+    - PgMex Library: "http://pgmex.alliedtesting.com"
+    - Performance Tests: "https://github.com/AlliedTesting/pgmex-jdbc-perf-test"
 
 excerpt_separator: <!--end_of_excerpt-->
 excerpt_length: 200

@@ -106,6 +106,9 @@ img {
   font-size: 12px;
   letter-spacing: 1px;
 }
+.navbar-custom .nav li a:hover {
+  background: #262626
+}
 
 .navbar-custom .navbar-brand,
 .navbar-custom .nav li a {
@@ -207,6 +210,9 @@ img {
 .navbar-custom .nav .navlinks-container {
   position: relative;
 }
+.navbar-custom .nav .navlinks-container:hover {
+  background: #262626;
+}
 .navbar-custom .nav .navlinks-parent:after {
   content: " \25BC";
 }
@@ -219,33 +225,33 @@ img {
   display: block;
   padding: 10px;
   padding-left: 30px;
-  background: #f5f5f5;
+  background: #151F26;
   text-decoration: none !important;
   border-width: 0 1px 1px 1px;
-  font-weight: normal;
+  font-size: 12px;
+}
+.navbar-custom .nav .navlinks-container .navlinks-children a:hover {
+  background: #262626;
 }
 @media only screen and (max-width: 767px) {
   .navbar-custom .nav .navlinks-container.show-children {
-    background: #eee;
+    background: #151F26;
   }
   .navbar-custom .nav .navlinks-container.show-children .navlinks-children {
     display: block;
   }
 }
 @media only screen and (min-width: 768px) {
-  .navbar-custom .nav .navlinks-container:hover {
-    background: #eee;
-  }
   .navbar-custom .nav .navlinks-container:hover .navlinks-children {
     display: block;
   }
   .navbar-custom .nav .navlinks-children {
     position: absolute;
-	text-align: center;
+	text-align: left;
   }
   .navbar-custom .nav .navlinks-container .navlinks-children a {
     padding-left: 10px;
-    border: 1px solid #eaeaea;
+    border: 1px solid #151F26;
     border-width: 0 1px 1px;
   }
 }
