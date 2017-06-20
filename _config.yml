@@ -4,7 +4,9 @@ title: PgMex Blog
 description: About PostgreSQL client library for Matlab
 # feedburner: http://feeds.feedburner.com/AlliedTesting
 title-img: allied_logo.jpg
+title-url: "https://www.alliedtesting.com"
 subtitle-img: logo.png
+subtitle-url: "http://pgmex.alliedtesting.com"
 pgmexurl: "http://pgmex.alliedtesting.com"
 perftesturl: "https://github.com/AlliedTesting/pgmex-jdbc-perf-test"
 
@@ -18,7 +20,7 @@ excerpt_length: 200
 #    hash: 
 #    size: 80
 
-avatar: logo_small_sqr.png
+# avatar: logo_small_sqr.png
 
 disqus:
   shortname: "pgmexblog"
