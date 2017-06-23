@@ -33,6 +33,7 @@ github:
   repo: https://github.com/AlliedTesting/pgmex-blog
 
 gems:
+  - jekyll-feed
   - jekyll-mentions
   - jekyll-sitemap
   - jekyll-paginate
@@ -100,4 +101,3 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-  - feed.xml
