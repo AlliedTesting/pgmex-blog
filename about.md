@@ -50,9 +50,9 @@ We have excellent delivery capabilities
 We have an exemplary track record of delivering on time, within budget and achieving all other key performance criteria. We have always been able to staff a project quickly and with high quality teams, even for projects.
 
 ## Services
-<table cellspacing="1" cellpadding="4" border="0" style="vertical-align: top;  background-color: transparent;"><tbody><tr ><td valign="top" >
+<table cellspacing="1" cellpadding="4" border="0" style="vertical-align: top;  background-color: transparent; font-size: 16px; "><tbody><tr ><td valign="top" >
 <p><span class="alliedservices">►</span> <span class="alliedservices"><strong> </strong><span><strong>Core QA and Testing </strong></span></span></p>
-<hr class="alliedservices"/><ul><li>Intelligent manual testing (functional and regression)</li>
+<hr class="alliedservices"/><ul style="margin:5px;padding:5px;" ><li>Intelligent manual testing (functional and regression)</li>
 <li>Trading functionality (valid/invalid orders, order status)</li>
 <li>Market data (data feeds, ticker plants, charts, etc.)</li>
 <li>Balances, positions, transactions</li>
@@ -67,7 +67,7 @@ We have an exemplary track record of delivering on time, within budget and achie
 </ul></td>
 <td valign="top">
 <p><span class="alliedservices">► <strong>Specialized QA and Testing </strong></span></p>
-<hr class="alliedservices"/><ul><li>SOR and algorithmic-trading systems testing</li>
+<hr class="alliedservices"/><ul style="margin:5px;padding:5px;" ><li>SOR and algorithmic-trading systems testing</li>
 <li>Behavioural testing</li>
 <li>Three levels of market simulation</li>
 <li>Back testing of trading strategies</li>
@@ -81,7 +81,7 @@ We have an exemplary track record of delivering on time, within budget and achie
 </ul></td>
 </tr><tr><td valign="top">
 <p><span class="alliedservices">► <strong>Mobile Application Testing Services </strong></span></p>
-<hr class="alliedservices"/><ul><li>Testing services</li>
+<hr class="alliedservices"/><ul style="margin:5px;padding:5px;" ><li>Testing services</li>
 <li>Testing software functionality</li>
 <li>Testing integration with internal and external systems</li>
 <li>Testing application deployment</li>
@@ -91,7 +91,7 @@ We have an exemplary track record of delivering on time, within budget and achie
 </ul></td>
 <td valign="top">
 <p><span class="alliedservices">► <strong>Financial Engineering</strong></span></p>
-<hr class="alliedservices"/><ul><li>In-depth financial testing</li>
+<hr class="alliedservices"/><ul style="margin:5px;padding:5px;" ><li>In-depth financial testing</li>
 <li>Trading algorithms and decision-making</li>
 <li>Forecasting and descriptive modeling</li>
 <li>Trading and performance analytics</li>
@@ -100,7 +100,7 @@ We have an exemplary track record of delivering on time, within budget and achie
 </td>
 </tr><tr><td valign="top">
 <p><span class="alliedservices">► <strong>QA Consulting</strong></span></p>
-<hr class="alliedservices"/><ul><li>QA strategy development</li>
+<hr class="alliedservices"/><ul style="margin:5px;padding:5px;" ><li>QA strategy development</li>
 <li>Automation strategy</li>
 <li>QA process audit</li>
 <li>Test coverage analysis</li>
@@ -108,7 +108,7 @@ We have an exemplary track record of delivering on time, within budget and achie
 </ul></td>
 <td valign="top">
 <p><span class="alliedservices">► <strong>Support Services</strong></span></p>
-<hr class="alliedservices"/><ul><li>Test environment maintenance and support</li>
+<hr class="alliedservices"/><ul style="margin:5px;padding:5px;" ><li>Test environment maintenance and support</li>
 <li>Release management</li>
 <li>First and second-level support</li>
 <li>Operability testing</li>
