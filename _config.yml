@@ -17,7 +17,7 @@ navbar-links:
 excerpt_separator: <!--end_of_excerpt-->
 excerpt_length: 200
 
-# google_analytics: ""
+google_analytics: "UA-47711680-2"
 
 # gravatar:
 #    hash: 
@@ -100,3 +100,4 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - feed.xml
