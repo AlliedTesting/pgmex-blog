@@ -8,8 +8,10 @@
         <span class="icon-bar"></span>
       </button>
       {% if site.title-img and site.subtitle-img %}
-        <a class="navbar-brand navbar-brand-logo" href="{{ site.url }}">
-          <img style=" float:left; display:inline" src="{{ site.baseurl }}/img/{{ site.subtitle-img }}" hspace=5px/>
+        <a class="navbar-brand navbar-brand-logo" href="{{ site.subtitle-url }}">
+          <img style=" float:left; display:inline" src="{{ site.baseurl }}/img/{{ site.subtitle-img }}" >
+        </a>
+        <a class="navbar-brand navbar-brand-logo" href="{{ site.title-url }}">
           <img style=" float:left; display:inline" src="{{ site.baseurl }}/img/{{ site.title-img }}" hspace=5px/>
         </a>
       {% elsif site.title-img %}
@@ -19,11 +21,15 @@
       {% endif %}
     </div>
 
-    <div class="collapse navbar-collapse" id="main-navbar">
+    <div class="navbar-home-container" >
       <ul class="nav navbar-nav navbar-right">
         <li class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}">
           <a href="{{ site.url }}">Home{% if page.url == site.url %} <span class="sr-only">(current)</span>{% endif %}</a>
         </li>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar" >
+      <ul class="nav navbar-nav navbar-right">
 
         {% for link in site.navbar-links %}
           {% if link[1].first %}
@@ -43,7 +49,6 @@
             </li>
           {% endif %}
         {% endfor %}
-
         {% comment %}
           The code below dynamically generates a sidebar nav of pages with
           `layout: page` in the front-matter. See readme for usage.

@@ -62,7 +62,7 @@ The reason is rather simple. As shows an analysis of source code for these funct
 creating a Java object of **org.postgresql.jdbc.PgPreparedStatement** type and filling it tuple by tuple, field by field by calling the respective
 setters. **datainsert** also creates an object of the same type corresponding to a special prepared statement, but, in contrast to **fastinsert**,
 filling of this object with data is performed in Java instead of Matlab, using a special "writer" object of
-**com.mathworks.toolbox.database.writeTheData** type with the following interface:
+<span style=" font-size: 16px; ">**com.mathworks.toolbox.database.writeTheData**</span> type with the following interface:
 
 ```java
 public class com.mathworks.toolbox.database.writeTheData {
