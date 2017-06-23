@@ -3,7 +3,6 @@ baseurl: "/pgmex-blog"
 title: PgMex Blog
 subtitle: Allied Testing
 description: PostgreSQL-Matlab connectivity
-feedburner: http://feeds.feedburner.com/AlliedTesting
 title-img: logo.png
 title-url: "http://pgmex.alliedtesting.com"
 subtitle-img: allied_logo.gif
@@ -34,7 +33,6 @@ github:
   repo: https://github.com/AlliedTesting/pgmex-blog
 
 gems:
-  - jekyll-feed
   - jekyll-mentions
   - jekyll-sitemap
   - jekyll-paginate
