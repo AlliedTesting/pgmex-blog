@@ -34,7 +34,7 @@ The first solution that at first glance seems to be rather obvious is to use **M
 JDBC connection. But it turns out this "standard" solution has some latent restrictions (concerning both performance, volumes and type of
 data to be processed) that do not allow to use the toolbox in our projects. And the goal of this paper is to reveal these
 restrictions and to compare it to another solution. The latter one, namely, [**PgMex library**](http://pgmex.alliedtesting.com), was developed by our team out of the necessity to work with big data of very diverse types (including *arrays*). [**PgMex library**](http://pgmex.alliedtesting.com) provides
-a connection to **PostgreSQL** via LibPQ library.
+a connection to **PostgreSQL** via libpq library.
 
 This part of the paper covers only data insertion performance, data retrieval will be discussed in Part II of the paper.
 
@@ -134,7 +134,8 @@ pgmexec('batchParamExec',dbConn,'insert into mytable values ($1,$2)','%int4 %nam
 In the next subsections below we compare the methods **datainsert** (and also **fastinsert** for the simplest experiments) with
 [**batchParamExec**](http://pgmex.alliedtesting.com/#batchparamexec). In this subsection we give some information on conditions
 for these experiments. All the testing was done on a box with Intel Core i7-5820K 3.30GHz processor, Asus X99-A motherboard, 64Gb DDR4 RAM
-running on 64-bit Windows 10. PostgreSQL 9.6 data storage was OCZ 256Gb Vector 280 SSD.
+running Matlab 2016b on 64-bit Windows 10. PostgreSQL 9.6 data storage was OCZ 256Gb Vector 280 SSD.
+We used [**PgMex library**](http://pgmex.alliedtesting.com) v1.1.0.
 
 A couple of words on data used for experiments. This data is based on real daily prices of stocks on some exchanges, so we do not deal below
 with some toy examples as above. Instead, we try to approximate a real-life usage as much as possible. The fields are as follows (the types pointed in
