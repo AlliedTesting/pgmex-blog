@@ -18,7 +18,7 @@ permalink: /about/
 <p class="short-bio">
 Peter V. Gagarinov is a financial model developer and a consultant specializing in financial market modeling, statistical forecasting and algorithmic trading. He supervised and participated
 in a dozen of financial R&D projects as quantitative modeling team-lead/system architect and later - as a head of R&D department at Allied Testing Ltd. 
-He is a co-author and maintainer of Ellipsoidal Toolbox (ET) for Matlab - a popular Ellipsoidal Calculus modeling framework designed at Moscow State University, System Analysis Department of Applied Mathematics and Computer Science Faculty where he served as a research assosiate.<br>
+He is a co-author and maintainer of Ellipsoidal Toolbox (ET) for Matlab - a popular Ellipsoidal Calculus modeling framework designed at Moscow State University, System Analysis Department of Applied Mathematics and Computer Science Faculty where he served as a research associate.<br>
 </p>
 
 * <b><span class="alliedservices">Ilya Rublev, Ph.D</span>
