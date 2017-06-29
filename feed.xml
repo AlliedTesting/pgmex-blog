@@ -14,6 +14,9 @@ layout: null
         <description>
           {% if post.subtitle %}{{ post.subtitle | xml_escape }} - {% endif %}
           {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
+          {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
+            <a href="{{ site.url }}{{ post.url }}">[Read More]</a>
+          {% endif %}
         </description>
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <link>{{ site.url }}{{ post.url }}</link>
