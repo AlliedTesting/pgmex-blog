@@ -4,6 +4,11 @@
   {% else %}
     {% assign disqus_identifier = page.disqus_identifier %}
   {% endif %}
+  {% if post.url %} 
+      {% assign disqus_url = post.url %} 
+  {% else %} 
+      {% assign disqus_url = page.url %} 
+  {% endif %} 
   
-  <li><span class="fa fa-comment"></span> <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread"{% if disqus_identifier %} data-disqus-identifier="{{ disqus_identifier }}"{% endif %}> comments</a></li>
+  <li><span class="fa fa-comment"></span> <a href="{{ disqus_url | prepend: site.baseurl }}#disqus_thread"{% if disqus_identifier %} data-disqus-identifier="{{ disqus_identifier }}"{% endif %}> comments</a></li>
 {% endif %}
