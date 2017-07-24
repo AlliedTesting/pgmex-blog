@@ -103,7 +103,7 @@ for iTuple=1:nTuples
 	end
     pgmexec('putf',pgParam,'%int4 %name',indVec(iTuple),nameCVec{iTuple});
     pgmexec('paramExec',dbConn,pgParam,...
-        'insert into mytable values ($1,$2)',pgParam);
+        'insert into mytable values ($1,$2)');
 end
 pgmexec('paramClear',pgParam);
 ```
