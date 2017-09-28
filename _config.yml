@@ -15,7 +15,7 @@ navbar-links:
     - Performance Tests: "https://github.com/AlliedTesting/pgmex-jdbc-perf-test"
 
 excerpt_separator: <!--end_of_excerpt-->
-excerpt_length: 200
+excerpt_length: 250
 
 google_analytics: "UA-47711680-3"
 

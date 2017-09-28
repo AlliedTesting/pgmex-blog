@@ -13,7 +13,7 @@ layout: null
         <title>{{ post.title | xml_escape }}</title>
         <description>
           {% if post.subtitle %}{{ post.subtitle | xml_escape }} - {% endif %}
-          {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
+          {{ post.excerpt | xml_escape | truncatewords: site.excerpt_length }}
           {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
             <a href="{{ site.url }}{{ post.url }}">[Read More]</a>
           {% endif %}
