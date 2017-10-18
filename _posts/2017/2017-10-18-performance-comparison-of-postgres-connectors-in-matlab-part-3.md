@@ -9,7 +9,7 @@ In this paper we continue the investigation of **PostgreSQL** connectors in Matl
 in [Part I](https://alliedtesting.github.io/pgmex-blog/2017/06/29/performance-comparison-of-postgresql-connectors-in-matlab-part-I/)
 and [Part II](https://alliedtesting.github.io/pgmex-blog/2017/09/29/performance-comparison-of-postgresql-connectors-in-matlab-part-II/).
 In the latter paper we compared the performance of data retrieval from **PostgreSQL** for the case all the fields to be retrieved
-having scalar types. Compared were two connectors. The first one was **Matlab Database Toolbox** (working with **PosgteSQL** via
+having scalar types. Compared were two connectors. The first one was **Matlab Database Toolbox** (working with **PostgreSQL** via
 a direct JDBC connection). The second connector is [**PgMex library**](http://pgmex.alliedtesting.com) 
 (providing a connection to **PostgreSQL** via libpq library). Here we consider retrieving of data containing values of
 [**array types**](https://www.postgresql.org/docs/9.6/static/arrays.html).
@@ -35,7 +35,7 @@ complex nature as in the example mentioned above (the one with the implied volat
 This is because the test data is simply transformed from the one taken from the previous articles. This is done just for simplicity
 and uniformity with the results obtained earlier, and thus - allowing us to concentrate on purely technical problems.
 The data is based on daily prices of real stocks on some exchanges with a few modifications: all the numerical fields having initially
-scalar values are transormed into arrays just be repeating each value several times. The same data was used in
+scalar values are transformed into arrays just be repeating each value several times. The same data was used in
 [Part I](https://alliedtesting.github.io/pgmex-blog/2017/06/29/performance-comparison-of-postgresql-connectors-in-matlab-part-I/#inserting-arrays)
 when we tested performance of *inserting* data that contained arrays. We omit here details concerning the structure of the
 test data we use. But the latter as well as conditions of the experiments are the same as in
@@ -98,8 +98,8 @@ matlabFieldVal =
     [2]
 ```
 
-As a result each element of the respective array is in its own cell. It is necessary to note here that for NULL
-values the corresponding cells are empty. Another remarks is that if the array as whole (not some of its elements) is
+As a result, each element of the respective array is in its own cell. It is necessary to note here that for NULL
+values the corresponding cells are empty. Another remark is that if the array as whole (not some of its elements) is
 initially NULL, it is returned not as **org.postgresql.jdbc.PgArray** object, but as a string equal to the value
 of **NullStringRead** parameter (set via **setdbprefs**):
 
@@ -130,7 +130,7 @@ Thus, we have the full information on NULLs. And, assuming there are no NULLs (o
 say, `0` or `NaN`), we are able to transform each of **org.postgresql.jdbc.PgArray** objects into ordinary Matlab array.
 
 Now let us consider the case when **DataReturnFormat** is equal to 'structure'. Then values of each table field are placed
-into the corresponding field of the structure returned by **fetch**. Moreover each array field now has **java.lang.Object\[\]\[\]** type:
+into the corresponding field of the structure returned by **fetch**. Moreover, each array field now has **java.lang.Object\[\]\[\]** type:
 
 ```matlab
 >> cursObj=fetch(exec(dbConn,[...
@@ -178,13 +178,13 @@ char
 We see that `jdbcFieldVal=jdbcFieldValVec(iTuple)` being value of `iTuple`-th tuple
 is of **java.lang.Object\[\]** array type and the number of elements in this array is 1. Taking `jdbcFieldVal(1)` we either obtain
 an object of **org.postgresql.jdbc.PgArray** class (if the respective array is not NULL as whole) or a string equal to the
-value of **NullStringRead** (otherwise). That is we can proceed further with all this exactly as in the case above 
+value of **NullStringRead** (otherwise). That is, we can proceed further with all this exactly as in the case above 
 of **DataReturnFormat** equal to 'cellarray'.
 
-The above algorithms are clear and straightforward. But the problem occures when one needs to apply them to several millions of
+The above algorithms are clear and straightforward. But the problem occurs when one needs to apply them to several millions of
 tuples. As shown below in experiments, the conversion of initially returned data to native Matlab formats sums up to a huge overhead.
 
-And last but not least. Regardless of what type each array of numerical type has in **PostgeSQL**, applying
+And last but not least. Regardless of what type each array of numerical type has in **PostgreSQL**, applying
 **cell** to some Java array (as in the approach above) transforms the latter array into **double** Matlab array
 (see [here](https://www.mathworks.com/help/matlab/matlab_external/handling-data-returned-from-java-methods.html)
 for details). This leads to a few rather serious drawbacks:
@@ -213,7 +213,7 @@ tuples to be returned is significant.
 
 For [**PgMex**](http://pgmex.alliedtesting.com) we again use the same way for data retrieval as in 
 [Part II](https://alliedtesting.github.io/pgmex-blog/2017/09/29/performance-comparison-of-postgresql-connectors-in-matlab-part-II/#methods-of-data-retrieval-in-pgmex).
-That is we apply consecutively two commands: [**exec**](http://pgmex.alliedtesting.com/#exec) and
+That is, we apply consecutively two commands: [**exec**](http://pgmex.alliedtesting.com/#exec) and
 [**getf**](http://pgmex.alliedtesting.com/#getf). The latter command transforms results into a Matlab friendly format.
 Namely, its outputs are structures, one structure per each field of retrieved table.
 For the case of table fields being of array types the fields of the corresponding structures are of the following types:
@@ -299,7 +299,7 @@ When **DataReturnFormat** is 'cellarray' the results are as follows:
 ![Retrieving of arrays, 'cellarray' mode]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareRetrieveForArraysAsCellArray_bar.jpeg)
 
 One can see the red graphs on the pictures above corresponding to **fetch** "break" when a number of tuples reaches 80000.
-This is because of Java heap memory problem occuring while conversion of results for a number of tuples equal to 90000,
+This is because of Java heap memory problem occurring while conversion of results for a number of tuples equal to 90000,
 just 104Mb in size. The exception is as follows:
 
 ```matlab
