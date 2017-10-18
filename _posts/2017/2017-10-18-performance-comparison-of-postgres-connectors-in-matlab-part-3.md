@@ -346,7 +346,7 @@ Consider now the results for **DataReturnFormat** set to 'structure':
 <!---
 ![Retrieving of arrays, 'structure' mode](pictures/compareRetrieveForArraysAsStruct_traj_cropped.jpeg)
 -->
-![Retrieving of arrays, 'structure' mode]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareRetrieveForArraysAsStruct_traj.jpeg)
+![Retrieving of arrays, 'structure' mode]({{ site.baseurl }}/img/posts{{ page.path | remove: '_posts' | remove: '.md' }}/compareRetrieveForArraysAsStruct_traj_cropped.jpeg)
 <!---
 ![Retrieving of arrays, 'structure' mode](pictures/compareRetrieveForArraysAsCellArray_bar.jpeg)
 -->
