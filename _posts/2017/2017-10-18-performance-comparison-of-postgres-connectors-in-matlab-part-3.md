@@ -318,7 +318,7 @@ Caused by:
 
 Starting with 90000 tuples [**exec**](http://pgmex.alliedtesting.com/#exec) together with [**getf**](http://pgmex.alliedtesting.com/#getf) methods
 from [**PgMex**](http://pgmex.alliedtesting.com) are the only ones that successfully solve the problem of data retrieval. 
-On our configuration [**PgMex**](http://pgmex.alliedtesting.com) retrieves the test data of 2000000 tuples (2034Mb)
+On our configuration [**PgMex**](http://pgmex.alliedtesting.com) retrieves the test data of 2000000 tuples (2304Mb)
 approximately in 28 seconds.
 
 It turns out that if we only take a range [0, 80000] for a number of tuples (as number of tuples = 80000 is where the red graphs end)
