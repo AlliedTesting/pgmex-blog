@@ -1,3 +1,4 @@
+{% capture this_year %}{{ site.time | date: "%Y" }}{% endcapture %}
 <footer>
   <div class="container">
     <div class="row">
@@ -85,7 +86,7 @@
       <p class="copyright text-muted">
         <a href="{{ site.author.url }}">{{ site.author.name }}</a>
         &nbsp;&bull;&nbsp;
-        {% if site.time|date('%Y') == '2017' %}
+        {% if this_year == '2017' %}
         Copyright 2017
         {% else %}
         Copyright 2017 - {{ site.time | date: '%Y' }}

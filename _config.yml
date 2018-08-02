@@ -32,7 +32,7 @@ disqus:
 github:
   repo: https://github.com/AlliedTesting/pgmex-blog
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-mentions
   - jekyll-sitemap
